@@ -106,7 +106,7 @@ relativo dipartimento, in ordine alfabetico per cognome e nome
 superare ciascuno dei suoi esami
 
   SELECT `students`.`name`, `students`.`surname`,
-  `courses`.`name` AS `exam_name`, `courses`.`period` AS `semester`,
+  `courses`.`name` AS `exam_name`,
   `degrees`.`name` AS `degree_name`,
   COUNT(*) AS `exam_attempts`
 
@@ -124,7 +124,7 @@ superare ciascuno dei suoi esami
   ON `courses`.`degree_id` = `degrees`.`id`
 
   GROUP BY `students`.`id`,
-  `courses`.`name`, `courses`.`period`,
+  `courses`.`name`,
   `degrees`.`name`
 
   ORDER BY `students`.`surname` ASC, `students`.`name` ASC;
